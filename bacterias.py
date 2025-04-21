@@ -3,13 +3,17 @@ import pandas as pd
 
 csv_path = "bacterias.csv"
 
+st.set_page_config(
+    page_title="Estudo de Bactérias - Visualização Moderna",
+    page_icon="🦠",
+    layout="wide"
+)
 # Título
 st.title("Estudo de Bactérias 🦠")
 
 # Tenta carregar os dados
 try:
     df = pd.read_csv(csv_path)
-    st.success("Dados carregados com sucesso!")
 except FileNotFoundError:
     st.error(f"Arquivo '{csv_path}' não encontrado. Verifique o caminho.")
     st.stop()
